@@ -59,7 +59,7 @@ def tijdloze_lijst():
     return song_list_dict
 
     pass
-def tijdloze_lijst_aflopend(song_list: [list]):
+def tijdloze_lijst_aflopend(song_list):
     song_list_aflopend = song_list.sort_values(by=["position"], ascending=False)
     print(song_list_aflopend)
 def toon_tijdloze_lijst_jaartal(year: str):

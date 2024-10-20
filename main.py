@@ -42,8 +42,8 @@ def main():
         elif keuze == "e":
             # Geef een lijst van songs van een bepaalde artiest
             artist = input("\nVan welke artiest wil jij zien? :").strip().lower()
-            list = toon_songs_van_artiest(artist)
-            print(list)
+            song_list = toon_songs_van_artiest(artist)
+            print(song_list)
         elif keuze == "f":
             # Geef een lijst van songs waar een bepaald woord in de lyrics staat
             lyric = input("\nVan welke woord wil jij zien? :").strip().lower()
@@ -172,7 +172,7 @@ def toon_songs_die_langst_in_lijst_staan() -> None:
     # Toont de top 15 songs die het langst in de lijst hebben gestaan
     song_list = json_lezen()["songs"]
     song_list_dict = pd.DataFrame(song_list)
-    song_list_die_langst_staan = song_list_dict.sort_values("created_at", ascending=0).head(15)
+    song_list_die_langst_staan = song_list_dict.sort_values("created_at", ascending=False).head(15)
     print(song_list_die_langst_staan)
 
 # Start het programma
